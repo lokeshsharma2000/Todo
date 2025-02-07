@@ -46,12 +46,33 @@
         .row {
             margin-bottom: 20px; /* Add spacing between rows */
         }
+
+        .btn-create {
+            background-color: #28a745; /* Green color */
+            color: white;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            transition: background-color 0.3s;
+        }
+
+        .btn-create:hover {
+            background-color: #218838; 
+        }
     </style>
 
     <h1>Admin Dashboard</h1>
 
+    <a href="{{ route('tasks.create') }}" class="btn-create">
+        Create Task
+    </a>
+
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-header">Total Tasks</div>
                 <div class="card-body">
@@ -60,7 +81,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-header">Total Users</div>
                 <div class="card-body">
@@ -69,7 +90,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-header">Pending Tasks</div>
                 <div class="card-body">
@@ -77,6 +98,20 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">inProcess Tasks</div>
+                <div class="card-body">
+                    <p>{{ $inProcessTasks }} inProcess</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        
     </div>
 </div>
 @endsection

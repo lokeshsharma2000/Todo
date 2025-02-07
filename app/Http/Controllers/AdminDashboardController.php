@@ -12,9 +12,10 @@ class AdminDashboardController extends Controller
         $tasksCount = Task::count(); 
         $usersCount = User::count(); 
         $pendingTasks = Task::where('status', 'pending')->count(); 
+        $inProcessTasks = Task::where('status','inProcess')->count();
 
         
-        return view('admin.dashboard', compact('tasksCount', 'usersCount', 'pendingTasks'));
+        return view('admin.dashboard', compact('tasksCount', 'usersCount', 'pendingTasks','inProcessTasks'));
     }
 }
 

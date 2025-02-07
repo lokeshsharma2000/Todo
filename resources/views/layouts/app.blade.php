@@ -31,6 +31,7 @@
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                 @csrf
+                                <span class="ms-2" style="color: black;">{{ auth()->user()->name }}</span>
                                 <button type="submit" class="btn btn-danger">Logout</button>
                             </form>
                         </li>
